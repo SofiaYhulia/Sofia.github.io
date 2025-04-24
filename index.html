@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tareas de Sofía</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffe0f0 0%, #f3e5f5 100%);
+      color: #4a148c;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #f06292;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 6px solid #ba68c8;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.3rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .tasks h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #ad1457;
+      text-align: center;
+    }
+
+    .tasks hr {
+      border: none;
+      border-top: 3px dotted #ce93d8;
+      margin: 1.5rem 0;
+    }
+
+    .week {
+      margin-bottom: 2rem;
+      border: 2px dashed #f48fb1;
+      border-radius: 15px;
+      padding: 1rem;
+      background-color: #ffffffcc;
+    }
+
+    .week h3 {
+      cursor: pointer;
+      background-color: #f8bbd0;
+      color: #6a1b9a;
+      padding: 1rem;
+      border-radius: 12px;
+      font-weight: 700;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .week h3:hover {
+      background-color: #f48fb1;
+    }
+
+    .homework-section {
+      display: none;
+      margin-top: 1rem;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .task-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      padding-left: 1rem;
+    }
+
+    .task-card {
+      background: #fff0f5;
+      border-left: 8px solid #f06292;
+      padding: 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #4a148c;
+      transition: background 0.3s;
+    }
+
+    .task-card:hover {
+      background: #fce4ec;
+    }
+
+    footer {
+      background: #f06292;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: auto;
+      border-top: 6px solid #ba68c8;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .tasks h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <script>
+    function toggleHomework(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>🌸 Página de Sofía 🌸</h1>
+    <p>Mis tareas lindas de Base de Datos II</p>
+  </header>
+
+  <main>
+    <section class="tasks">
+      <h1>✨ Mis Trabajos ✨</h1>
+      <hr>
+
+      <div class="week">
+        <h3 onclick="toggleHomework('semana1')">📅 Semana 1</h3>
+        <div id="semana1" class="homework-section">
+          <h4>📘 Tarea Teórica</h4>
+          <div class="task-list">
+            <a href="tasks/Task 1 Resume.pdf" class="task-card" target="_blank">
+              📖 Tarea 1 - Sistemas Gestores de Base de Datos - Resumen (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="week">
+        <h3 onclick="toggleHomework('semana2')">📅 Semana 2</h3>
+        <div id="semana2" class="homework-section">
+          <h4>🛠️ Tarea Práctica</h4>
+          <div class="task-list">
+            <a href="tasks/diagram of exercise 1.png" class="task-card" target="_blank">
+              🖼️ Tarea 1 - Primer Ejercicio - Entidad-Relación (Imagen)
+            </a>
+            <a href="tasks/diagram of exercise 2.png" class="task-card" target="_blank">
+              🖼️ Tarea 2 - Segundo Ejercicio - Entidad-Relación (Imagen)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="week">
+        <h3 onclick="toggleHomework('semana3')">📅 Semana 3</h3>
+        <div id="semana3" class="homework-section">
+          <h4>🛠️ Tarea Práctica</h4>
+          <div class="task-list">
+            <a href="tasks/TABLES OF EXERCISES.xlsx" class="task-card" target="_blank">
+              📊 Tarea 3 - Datos de Tablas (Excel)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="week">
+        <h3 onclick="toggleHomework('semana4')">📅 Semana 4</h3>
+        <div id="semana4" class="homework-section">
+          <h4>🛠️ Tarea Práctica</h4>
+          <div class="task-list">
+            <a href="tareas/tarea 1 - semana 4.png" class="task-card" target="_blank">
+              🖼️ Tarea 1 - Primer Ejercicio - Modelo Entidad-Relación (Imagen)
+            </a>
+            <a href="tareas/tarea 2 - semana 4.drawio.png" class="task-card" target="_blank">
+              🖼️ Tarea 2 - Segundo Ejercicio - Modelo Entidad-Relación (Imagen)
+            </a>
+            <a href="tareas/TABLA TAREA - SEMANA 4.xlsx" class="task-card" target="_blank">
+              📊 Tarea 3 - Modelo Relacional (Excel)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="week">
+        <h3 onclick="toggleHomework('semana5')">📅 Semana 5</h3>
+        <div id="semana5" class="homework-section">
+          <h4>📘 Tarea Teórica</h4>
+          <div class="task-list">
+            <a href="tasks/diagram of exercise 2.1.png" class="task-card" target="_blank">
+              🖼️ Tarea 1 - Manual de Registro
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>💖 Hecho con mucho cariño por Sofía | Base de Datos II - 2025 💖</p>
+  </footer>
+</body>
+</html>
